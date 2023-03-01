@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:github_user_search_app/src/data/models/gihub_user.model.dart';
 
 class GithubStatusCard extends StatelessWidget {
   const GithubStatusCard({
     super.key,
+    required this.githubUser,
   });
+
+  final GithubUser githubUser;
 
   @override
   Widget build(BuildContext context) {
@@ -14,28 +18,28 @@ class GithubStatusCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
-              children: const [
-                Text("Repos"),
+              children: [
+                const Text("Repos"),
                 Text(
-                  "18",
-                  style: TextStyle(fontSize: 18),
+                  "${githubUser.publicRepos}",
+                  style: const TextStyle(fontSize: 18),
                 )
               ],
             ),
             Column(
-              children: const [
-                Text("Repos"),
+              children: [
+                const Text("Followers"),
                 Text(
-                  "18",
-                  style: TextStyle(fontSize: 18),
+                  "${githubUser.followers}",
+                  style: const TextStyle(fontSize: 18),
                 )
               ],
             ),
             Column(
-              children: const [
-                Text("Repos"),
+              children: [
+                const Text("Following"),
                 Text(
-                  "18",
+                  "${githubUser.following}",
                   style: TextStyle(fontSize: 18),
                 )
               ],

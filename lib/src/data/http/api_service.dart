@@ -10,13 +10,20 @@ class ApiService {
 
   Future get({required String endpoint}) async {
     try {
-      return await client.get(Uri.https('$baseUrl/$endpoint'));
+      var response = await client.get(Uri.parse('$baseUrl/$endpoint'));
+
+      return checkResponse(response);
     } catch (e) {
-      rethrow;
+      return checkResponse(null);
+    } finally {
+      client.close();
     }
   }
 
-  checkResponse(http.Response response) {
+  Future checkResponse(http.Response? response) async {
+    if (response == null) {
+      throw Exception("We are unable to do that!");
+    }
     switch (response.statusCode) {
       case 200:
         return json.decode(response.body);

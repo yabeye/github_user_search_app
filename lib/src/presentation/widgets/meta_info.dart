@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:github_user_search_app/src/data/models/gihub_user.model.dart';
 
 class MetaInfo extends StatelessWidget {
   const MetaInfo({
     super.key,
+    required this.githubUser,
   });
+
+  final GithubUser githubUser;
 
   @override
   Widget build(BuildContext context) {
+    print("Blog: $githubUser");
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -14,29 +19,29 @@ class MetaInfo extends StatelessWidget {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               InfoText(
                 iconData: Icons.location_on,
-                label: "Addis Ababa",
+                label: githubUser.location,
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               InfoText(
                 iconData: Icons.south_america_outlined,
-                label: "twitter link here",
+                label: githubUser.blog,
               ),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               InfoText(
                 iconData: Icons.link,
-                label: "github link her3",
+                label: githubUser.twitterUsername,
               ),
-              SizedBox(height: 15),
-              InfoText(
+              const SizedBox(height: 15),
+              const InfoText(
                 iconData: Icons.maps_home_work_outlined,
-                // label: "@github",
+                label: "@github",
               ),
             ],
           ),

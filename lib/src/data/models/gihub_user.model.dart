@@ -7,10 +7,11 @@ String githubUserToJson(GithubUser data) => json.encode(data.toJson());
 
 class GithubUser {
   GithubUser({
-    this.login,
+    required this.login,
     required this.id,
     this.avatarUrl,
     this.name,
+    this.blog,
     this.location,
     this.email,
     this.bio,
@@ -22,9 +23,10 @@ class GithubUser {
     required this.updatedAt,
   });
 
-  String? login;
+  String login;
   int id;
   String? avatarUrl;
+  String? blog;
   String? name;
   String? location;
   String? email;
@@ -41,6 +43,7 @@ class GithubUser {
         id: json["id"],
         avatarUrl: json["avatar_url"],
         name: json["name"],
+        blog: json["blog"],
         location: json["location"],
         email: json["email"],
         bio: json["bio"],
@@ -57,6 +60,7 @@ class GithubUser {
         "id": id,
         "avatar_url": avatarUrl,
         "name": name,
+        "blog": blog,
         "location": location,
         "email": email,
         "bio": bio,
