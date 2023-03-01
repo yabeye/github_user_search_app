@@ -27,7 +27,10 @@ class MetaInfo extends StatelessWidget {
               const SizedBox(height: 15),
               InfoText(
                 iconData: Icons.south_america_outlined,
-                label: githubUser.blog,
+                label:
+                    (githubUser.blog == null || (githubUser.blog ?? '').isEmpty)
+                        ? null
+                        : githubUser.blog,
               ),
             ],
           ),

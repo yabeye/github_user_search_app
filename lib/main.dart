@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_user_search_app/src/locator.dart';
@@ -7,6 +7,10 @@ import 'package:github_user_search_app/src/logic/cubits/user/user_cubit.dart';
 import 'src/presentation/screens/screens.dart';
 
 Future<void> main() async {
+  if (kReleaseMode) {
+    debugPrint = (String? message, {int? wrapWidth}) {};
+  }
+
   await setupLocator();
   runApp(const WhalesApp());
 }

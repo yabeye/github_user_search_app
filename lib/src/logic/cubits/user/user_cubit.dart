@@ -10,13 +10,14 @@ import 'package:http/http.dart' as http;
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserLoading());
+  // UserCubit() : super(UserLoading());
 
-  // UserCubit({GithubUserRepo? githubUserRepo})
-  //     : _githubUserRepo = githubUserRepo ?? locator.get<GithubUserRepo>(),
-  //       super(UserLoading());
+  UserCubit({GithubUserRepo? githubUserRepo})
+      : _githubUserRepo = githubUserRepo ?? locator.get<GithubUserRepo>(),
+        super(UserLoading());
 
-  final GithubUserRepo _githubUserRepo = GithubUserRepo();
+  final GithubUserRepo _githubUserRepo;
+  // final GithubUserRepo _githubUserRepo = GithubUserRepo();
 
   GithubUser? _githubUser;
   GithubUser? get githubUser => _githubUser;

@@ -10,7 +10,7 @@ class ApiService {
 
   Future get({required String endpoint}) async {
     try {
-      var response = await client.get(Uri.parse('$baseUrl/$endpoint'));
+      var response = await http.get(Uri.parse('$baseUrl/$endpoint'));
 
       return checkResponse(response);
     } catch (e) {

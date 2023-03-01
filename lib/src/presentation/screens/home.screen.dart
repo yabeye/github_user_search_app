@@ -73,12 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Colors.blue,
                                 ),
                               ),
-                              onPressed: () async {
-                                await context
-                                    .read<UserCubit>()
-                                    .searchGithubUser(
-                                        githubUsername:
-                                            _searchKeyController!.text);
+                              onPressed: () {
+                                context.read<UserCubit>().searchGithubUser(
+                                    githubUsername: _searchKeyController!.text);
                               },
                               child: const Text(
                                 'Search',
