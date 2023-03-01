@@ -91,6 +91,41 @@ class Main extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(),
+                  Expanded(
+                    child: Container(
+                      // width: deviceSize.width * .7,
+                      padding: const EdgeInsets.only(left: 8),
+                      decoration: const BoxDecoration(
+                          // color: Colors.red,
+                          ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    "Yeabsera B.",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  Text("@yabeye"),
+                                ],
+                              ),
+                              const Text("Joined march - 1"),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+                          const Text("Some bio here!"),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
